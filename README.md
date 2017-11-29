@@ -7,7 +7,7 @@ sudo npm install -g ethereumjs-testrpc
 ```
 
 ## Quick start
-Run the local test node in the terminal:
+Run the local test node in a terminal:
 ```bash
 testrpc
 ```

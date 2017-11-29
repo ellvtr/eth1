@@ -10,9 +10,13 @@
   <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
   <!-- <script src="node_modules/web3/dist/web3.js"></script> -->
   <script src="node_modules/web3/dist/web3.min.js"></script>
+  <style type="text/css">
+    h1 { text-align: center; }
+  </style>
 </head>
 <body>
   <div class="container">
+    <h1>Foo Contract</h1>
     
     <div class="row">
     <div class="col col-md-6 col-md-offset-3">
@@ -27,9 +31,9 @@
 
     <p>&nbsp;</p>
 
-    <label>Input in hex format:</label>
+    <label>Output from 'getFoo' in hex format:</label>
     <pre id="out1"></pre>
-    <label>Input converted to string:</label>
+    <label>Output from 'getFoo' converted to string:</label>
     <pre id="out2"></pre>
 
     <div class="panel panel-default">
@@ -89,6 +93,7 @@ var inp1 = document.getElementById("inp1"), btn1 = document.getElementById("btn1
 $(btn1).click(function(e){
   e.preventDefault();
   setFoo(inp1.value);
+  inp1.value = "";
   out1.innerHTML = foo.getFoo();
   out2.innerHTML = web3.toAscii(foo.getFoo());
 });
